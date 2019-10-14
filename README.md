@@ -1,30 +1,22 @@
-# Teoria Transmisiunii Informației – Mini-proiect
+# Decision Tree Learning
 
-## Tema 17 – Decision Tree Learning
+Our project proposes a Machine Learning algorithm, specifically Decision Trees. We have implemented a classification algorithm, using two different methods: entropy classification and Gini impurity respectively. Both entropy and the Gini impurity measure the uncertainty of a classification. The Gini impurity represents the frequency of misclassification. It requires less processing power than computing entropy, because no logarithmic computations are necessary.
 
-Abrașu Cătălin, grupa 432A
+The algorithm uses a database from the archive.ics.uci.edu website, where we can find many databases for machine learning purposes. We have chosen 2 databases, with a similar format -the ideal class is on the 0th column, and the classification dimensions are on the following columns-, the "Wine" database, which determines a wine's quality based on 13 factors such as alcohol concentration, color intensity etc. and the "Balance Scale" database, used to predict a scale's position based on the weights standing on each arm and their distance from the center of the scale (4 factors). This data is imported with the importdata function. 70% of it is used to train the decision trees and 30% is used to test them via the split function.
 
-Iliescu Dan, grupa 432A
+After importing the data and processing it in an appropriate format, two decision trees are trained with the gini_train function and the entropy_train function, respectively. The maximum depth was set to 3 levels, with a condition to have a minimum of 5 objects in each leaf class. This way we avoid both overfitting, in which each object would have its own class, and underfitting, in which classes would be too general to provide necessary information.
 
-Radu Vlad-Andrei, grupa 432A
-
-Tudosia Ștefan, grupa 432A
-
-
-Tema noastră propune implementarea unui algoritm de învățare prin arbori de decizie. Am decis să implementăm un algoritm de clasificare cu ajutorul arborilor de decizie, prin două metode: categorizare după entropie, respectiv prin impuritate Gini. Atât entropia, cât și impuritatea Gini sunt măsuri pentru incertitudinea clasificării în funcție de variabila aleasă. Impuritatea Gini reprezintă frecvența cu care obiectele sunt clasificate greșit. Impuritatea Gini necesită o putere de procesare mai mică decât calcularea entropiei, deoarece nu sunt necesare calcule logaritmice.
-
-Algoritmul preia o bază de date de pe site-ul archive.ics.uci.edu, unde se găsesc o multitudine de baze de date utilizate pentru machine learning. Am ales două baze de date, cu format similar -clasa dorită se află pe coloana 0, iar variabilele utilizate pe clasificare pe coloanele următoare-, baza de date “Wine”, care determină calitatea unui vin după 13 factori precum concentrația de alcool, intensitatea culorii etc. și baza de date “Balance Scale” pentru a prezice poziția unui balansoar în funcție de greutățile pe fiecare braț și distanța la care acestea se află față de centrul balansoarului (4 factori). Aceste date sunt preluate din baza de date (funcția importdata), 70% urmând a fi utilizate pentru antrenarea arborilor de decizie, iar 30% fiind utilizate pentru testarea acestora (funcția split).
-
-După preluarea datelor și salvarea lor într-un format potrivit, se vor antrena doi arbori de decizie cu funcțiile gini_train și entropy_train. Adâncimea maximă a acestor arbori a fost impusă la 3 niveluri, cu condiția suplimentară de a avea minim 5 obiecte în fiecare frunză. Astfel se evită situațiile de supraclasificare, în care fiecare obiect ar avea propria lui clasă, respectiv de subclasificare, în care clasele ar fi prea generale pentru a oferi informația necesară.
-
-Funcția prediction este utilizată pentru a clasifica seturile de date de test în funcție de arborii de decizie creați anterior. În final, funcția accuracy returnează informații utile despre precizia fiecărui arbore: matricea de confuzie (o matrice de n*n clase, unde pe diagonala principală sunt clasificările corecte, iar celelalte valori sunt erori de clasificare), precizia clasificării în procente, și un raport de clasificare care conține alte informații utile.
+The prediction function is used to classify the test data. The accuracy function returns useful information about each tree's accuracy: the confusion matrix (an n*n matrix with the correct labels on the main diagonal, the other values representing misclassifications), the precision and a classification report with other useful information.
 
 Majoritatea funcțiilor au fost implementate cu ajutorul funcțiilor prestabilite din biblioteca sklearn.
 La final, datele de ieșire vor fi scrise într-un fișier, output.txt
 
+Most functions were implemented with the help of the sklearn package.
+The output is written to the output.txt file.
 
 
-## Bibliografie:
+
+## References:
 
 https://archive.ics.uci.edu/ml/machine-learning-databases/wine/  	
 
