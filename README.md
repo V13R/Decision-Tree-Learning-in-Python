@@ -8,9 +8,6 @@ After importing the data and processing it in an appropriate format, two decisio
 
 The prediction function is used to classify the test data. The accuracy function returns useful information about each tree's accuracy: the confusion matrix (an n*n matrix with the correct labels on the main diagonal, the other values representing misclassifications), the precision and a classification report with other useful information.
 
-Majoritatea funcțiilor au fost implementate cu ajutorul funcțiilor prestabilite din biblioteca sklearn.
-La final, datele de ieșire vor fi scrise într-un fișier, output.txt
-
 Most functions were implemented with the help of the sklearn package.
 The output is written to the output.txt file.
 
